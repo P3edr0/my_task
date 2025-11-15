@@ -1,0 +1,5 @@
+Fonts used in this design:
+
+Font: Inter
+Author: Rasmus Andersson
+Url: https://www.fontsquirrel.com/fonts/inter

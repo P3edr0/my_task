@@ -42,6 +42,12 @@ dependencies:
   mobx: ^2.5.0
   google_fonts: ^6.3.2
   flutter_feather_icons: ^2.0.0+1
+  mobx_codegen: ^2.7.4
+  build_runner: ^2.10.3
+  get_it: ^9.0.5
+  flutter_localizations:
+    sdk: flutter
+  localization: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -68,7 +74,6 @@ flutter:
     - assets/sounds/finish_sound.mp3
     - assets/sounds/confirm_sound.mp3
     - assets/animations/rocket.gif
-    - assets/animations/teste.jpeg
 
 flutter_icons:
   android: true

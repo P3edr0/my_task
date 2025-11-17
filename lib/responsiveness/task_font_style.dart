@@ -24,6 +24,10 @@ abstract class TaskFontStyle {
     fontSize: Responsive.getFontValue(28),
     color: Colors.black,
   );
+  static TextStyle h4Large = GoogleFonts.lexend().copyWith(
+    fontSize: Responsive.getFontValue(24),
+    color: Colors.black,
+  );
   static TextStyle h4 = GoogleFonts.lexend().copyWith(
     fontSize: Responsive.getFontValue(20),
     color: Colors.black,
@@ -71,6 +75,11 @@ abstract class TaskFontStyle {
   );
   static TextStyle h3Bold = GoogleFonts.lexend().copyWith(
     fontSize: Responsive.getFontValue(28),
+    color: Colors.black,
+    fontWeight: FontWeight.w900,
+  );
+  static TextStyle h4LargeBold = GoogleFonts.lexend().copyWith(
+    fontSize: Responsive.getFontValue(24),
     color: Colors.black,
     fontWeight: FontWeight.w900,
   );

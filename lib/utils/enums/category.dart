@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_task/utils/icons.dart';
 
 enum Category {
   home,
@@ -10,7 +11,8 @@ enum Category {
   family,
   transport,
   goals,
-  leisure;
+  leisure,
+  other;
 
   bool get isHome => this == home;
   bool get isWork => this == work;
@@ -22,29 +24,60 @@ enum Category {
   bool get isTransport => this == transport;
   bool get isGoals => this == goals;
   bool get isLeisure => this == leisure;
+  bool get isOther => this == other;
 
   IconData getIcon() {
     switch (this) {
       case home:
-        return Icons.house;
+        return TaskIcons.home;
       case work:
-        return Icons.business;
+        return TaskIcons.work;
       case shopping:
-        return Icons.shopping_cart;
+        return TaskIcons.shopping;
       case health:
-        return Icons.healing;
+        return TaskIcons.health;
       case study:
-        return Icons.menu_book;
+        return TaskIcons.study;
       case finance:
-        return Icons.savings;
+        return TaskIcons.finance;
       case family:
-        return Icons.family_restroom;
+        return TaskIcons.family;
       case transport:
-        return Icons.directions_car;
+        return TaskIcons.car;
       case goals:
-        return Icons.flag;
+        return TaskIcons.goal;
+      case leisure:
+        return TaskIcons.fun;
       default:
-        return Icons.games;
+        return TaskIcons.others;
+    }
+  }
+
+  @override
+  String toString() {
+    switch (this) {
+      case home:
+        return 'Casa';
+      case work:
+        return 'Trabalho';
+      case shopping:
+        return 'Compras';
+      case health:
+        return 'Saúde';
+      case study:
+        return 'Estudo';
+      case finance:
+        return 'Finanças';
+      case family:
+        return 'Família';
+      case transport:
+        return 'Transporte';
+      case goals:
+        return 'Objetivos';
+      case leisure:
+        return 'Lazer';
+      default:
+        return 'Outros';
     }
   }
 }

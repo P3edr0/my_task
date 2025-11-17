@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import "package:flutter_feather_icons/flutter_feather_icons.dart";
 import 'package:my_task/domain/entities/task_entity.dart';
 import 'package:my_task/responsiveness/responsive.dart';
 import 'package:my_task/responsiveness/task_font_style.dart';
@@ -7,8 +6,10 @@ import 'package:my_task/tarefa_project/home/components/day_card.dart';
 import 'package:my_task/tarefa_project/home/components/home_card.dart';
 import 'package:my_task/tarefa_project/home/components/menu_icon.dart';
 import 'package:my_task/tarefa_project/home/components/task_list_view.dart';
+import 'package:my_task/tarefa_project/new_task/new_task_page.dart';
 import 'package:my_task/theme/colors.dart';
 import 'package:my_task/utils/enums/category.dart';
+import 'package:my_task/utils/icons.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                           TaskMenuIcon(),
                           SizedBox(width: 16),
                           Icon(
-                            FeatherIcons.bell,
+                            TaskIcons.notification,
                             color: primaryColor,
                             size: Responsive.getSizeValue(28),
                           ),
@@ -62,10 +63,21 @@ class _HomePageState extends State<HomePage> {
                               color: primaryColor,
                               borderRadius: BorderRadius.circular(8),
                             ),
-                            child: Icon(
-                              Icons.add,
-                              color: secondaryColor,
-                              size: Responsive.getSizeValue(30),
+                            child: InkWell(
+                              onTap:
+                                  () => Navigator.push<void>(
+                                    context,
+                                    MaterialPageRoute<void>(
+                                      builder:
+                                          (BuildContext context) =>
+                                              NewTaskPage(),
+                                    ),
+                                  ),
+                              child: Icon(
+                                Icons.add,
+                                color: secondaryColor,
+                                size: Responsive.getSizeValue(30),
+                              ),
                             ),
                           ),
                         ],

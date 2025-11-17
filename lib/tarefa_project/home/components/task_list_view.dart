@@ -6,13 +6,20 @@ import 'package:my_task/theme/colors.dart';
 import 'package:my_task/utils/formatters/date_formatter.dart';
 
 class TaskListView extends StatelessWidget {
-  const TaskListView({super.key, required this.tasks});
+  const TaskListView({
+    super.key,
+    required this.tasks,
+    // required this.scrollController,
+  });
   final List<TaskEntity> tasks;
+  // final ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
     return ScrollConfiguration(
       behavior: _CustomScrollBehavior(),
+
       child: ListView.builder(
+        // controller: scrollController,
         padding: EdgeInsets.zero,
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
@@ -47,12 +54,10 @@ class _CustomScrollBehavior extends ScrollBehavior {
     Widget child,
     ScrollableDetails details,
   ) {
-    final controller = ScrollController();
-
     return RawScrollbar(
+      controller: details.controller,
       trackVisibility: true,
       thumbVisibility: true,
-      controller: controller,
       trackColor: secondaryFocusColor,
       thickness: 2,
       radius: Radius.circular(20),

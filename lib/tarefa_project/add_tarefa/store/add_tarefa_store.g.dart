@@ -69,8 +69,10 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
     });
   }
 
-  late final _$tarefasListAtom =
-      Atom(name: '_AddTarefaBase.tarefasList', context: context);
+  late final _$tarefasListAtom = Atom(
+    name: '_AddTarefaBase.tarefasList',
+    context: context,
+  );
 
   @override
   List<dynamic> get tarefasList {
@@ -85,21 +87,26 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
     });
   }
 
-  late final _$deleteAsyncAction =
-      AsyncAction('_AddTarefaBase.delete', context: context);
+  late final _$deleteAsyncAction = AsyncAction(
+    '_AddTarefaBase.delete',
+    context: context,
+  );
 
   @override
   Future<void> delete(dynamic index) {
     return _$deleteAsyncAction.run(() => super.delete(index));
   }
 
-  late final _$_AddTarefaBaseActionController =
-      ActionController(name: '_AddTarefaBase', context: context);
+  late final _$_AddTarefaBaseActionController = ActionController(
+    name: '_AddTarefaBase',
+    context: context,
+  );
 
   @override
   dynamic selectCor(Color color) {
     final _$actionInfo = _$_AddTarefaBaseActionController.startAction(
-        name: '_AddTarefaBase.selectCor');
+      name: '_AddTarefaBase.selectCor',
+    );
     try {
       return super.selectCor(color);
     } finally {
@@ -110,7 +117,8 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
   @override
   dynamic selectIdCor(dynamic value) {
     final _$actionInfo = _$_AddTarefaBaseActionController.startAction(
-        name: '_AddTarefaBase.selectIdCor');
+      name: '_AddTarefaBase.selectIdCor',
+    );
     try {
       return super.selectIdCor(value);
     } finally {
@@ -121,7 +129,8 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
   @override
   Color convertColor(int index) {
     final _$actionInfo = _$_AddTarefaBaseActionController.startAction(
-        name: '_AddTarefaBase.convertColor');
+      name: '_AddTarefaBase.convertColor',
+    );
     try {
       return super.convertColor(index);
     } finally {
@@ -132,7 +141,8 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
   @override
   void addTarefa() {
     final _$actionInfo = _$_AddTarefaBaseActionController.startAction(
-        name: '_AddTarefaBase.addTarefa');
+      name: '_AddTarefaBase.addTarefa',
+    );
     try {
       return super.addTarefa();
     } finally {
@@ -143,7 +153,8 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
   @override
   void getchecks() {
     final _$actionInfo = _$_AddTarefaBaseActionController.startAction(
-        name: '_AddTarefaBase.getchecks');
+      name: '_AddTarefaBase.getchecks',
+    );
     try {
       return super.getchecks();
     } finally {
@@ -154,7 +165,8 @@ mixin _$AddTarefaStore on _AddTarefaBase, Store {
   @override
   void editaCheck(dynamic index) {
     final _$actionInfo = _$_AddTarefaBaseActionController.startAction(
-        name: '_AddTarefaBase.editaCheck');
+      name: '_AddTarefaBase.editaCheck',
+    );
     try {
       return super.editaCheck(index);
     } finally {

@@ -34,7 +34,7 @@ class AddTarefaWidget {
       child: Column(
         children: [
           Text(
-            "Nome da Missão",
+            "Nome da tarefa",
             style: TextStyle(
               color: corFontePrimaria,
               fontSize: 20,
@@ -104,7 +104,7 @@ class AddTarefaWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            "Selecione a cor do traje",
+            "Selecione a cor da tarefa",
             style: TextStyle(
               color: corFontePrimaria,
               fontWeight: FontWeight.bold,
@@ -280,7 +280,7 @@ class AddTarefaWidget {
               Icon(FontAwesomeIcons.rocket, color: addTarefaStore.cor),
               const SizedBox(width: 20),
               Text(
-                "MISSÕES DE HOJE",
+                "TAREFAS DE HOJE",
                 style: TextStyle(
                   color: addTarefaStore.cor,
                   fontSize: 20,

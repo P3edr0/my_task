@@ -6,20 +6,37 @@ class TaskAppTheme {
   TaskAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
+    textSelectionTheme: TextSelectionThemeData(
+      selectionColor: primaryFocusColor.withValues(alpha: 0.3),
+      selectionHandleColor: primaryFocusColor,
+    ),
+
     brightness: Brightness.light,
     scaffoldBackgroundColor: Colors.white,
-    primaryColor: primaryColor,
-    focusColor: secondaryColor,
-    fontFamily: 'roboto',
+    colorScheme: ColorScheme.light(
+      primary: primaryColor,
+      onPrimary: secondaryColor,
+      surface: secondaryColor,
+      onSurface: secondaryFocusColor,
+    ),
+    fontFamily: 'lexend',
     textTheme: TaskTextTheme.lightTextTheme,
     useMaterial3: true,
   );
   static ThemeData darkTheme = ThemeData(
+    textSelectionTheme: TextSelectionThemeData(
+      selectionColor: primaryFocusColor.withValues(alpha: 0.3),
+      selectionHandleColor: primaryFocusColor,
+    ),
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.black,
-    primaryColor: primaryColor,
-    focusColor: secondaryFocusColor,
-    fontFamily: 'roboto',
+    colorScheme: ColorScheme.light(
+      primary: primaryColor,
+      onPrimary: secondaryFocusColor,
+      surface: secondaryColor,
+      onSurface: secondaryFocusColor,
+    ),
+    fontFamily: 'lexend',
     textTheme: TaskTextTheme.darkTextTheme,
     useMaterial3: true,
   );

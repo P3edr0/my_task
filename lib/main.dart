@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_task/locale/jack_localizations.dart';
 import 'package:my_task/locale/locale_controller.dart';
+import 'package:my_task/tarefa_project/home/home_store.dart';
 import 'package:my_task/tarefa_project/new_task/new_task_store.dart';
 import 'package:my_task/tarefa_project/splash/splash_page.dart';
 import 'package:my_task/theme/custom_themes/theme.dart';
@@ -33,4 +34,5 @@ class Home extends StatelessWidget {
 
 void configureDependencies() {
   getIt.registerLazySingleton<NewTaskStore>(() => NewTaskStore());
+  getIt.registerLazySingleton<HomeStore>(() => HomeStore());
 }

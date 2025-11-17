@@ -54,7 +54,7 @@ class _NewTaskTimeSelectorState extends State<NewTaskTimeSelector> {
           label: widget.label,
           textController: widget.controller,
           elements: times,
-          width: Responsive.getSizeValue(200),
+          width: Responsive.getSizeValue(150),
           onTap: (value) {},
         ),
       ],

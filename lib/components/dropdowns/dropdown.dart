@@ -11,13 +11,13 @@ class TaskDropdown extends StatefulWidget {
     this.height = 200,
     required this.elements,
     required this.label,
-    required this.textController,
+    required this.selectedItem,
   });
   final double width;
   final double height;
   final List<String> elements;
   final String label;
-  final TextEditingController textController;
+  final String selectedItem;
   final Function(String value) onTap;
   @override
   State<TaskDropdown> createState() => _TaskDropdownState();
@@ -27,7 +27,7 @@ class _TaskDropdownState extends State<TaskDropdown> {
   @override
   Widget build(BuildContext context) {
     final fontStyle =
-        widget.textController.text.isEmpty
+        widget.selectedItem.isEmpty
             ? TaskFontStyle.h4Bold.copyWith(
               color: secondaryFocusColor.withValues(alpha: 0.4),
             )
@@ -58,9 +58,9 @@ class _TaskDropdownState extends State<TaskDropdown> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    widget.textController.text.isEmpty
+                    widget.selectedItem.isEmpty
                         ? widget.label
-                        : widget.textController.text,
+                        : widget.selectedItem,
                     style: fontStyle,
                   ),
                   AnimatedRotation(
@@ -70,7 +70,7 @@ class _TaskDropdownState extends State<TaskDropdown> {
                       Icons.expand_more,
                       size: 20,
                       color:
-                          widget.textController.text.isEmpty
+                          widget.selectedItem.isEmpty
                               ? primaryFocusColor
                               : secondaryFocusColor,
                     ),
@@ -96,7 +96,6 @@ class _TaskDropdownState extends State<TaskDropdown> {
                   (context, index) => MenuItemButton(
                     onPressed: () async {
                       setState(() {
-                        widget.textController.text = widget.elements[index];
                         widget.onTap(widget.elements[index]);
                       });
                     },
@@ -107,8 +106,7 @@ class _TaskDropdownState extends State<TaskDropdown> {
                       dense: true,
                       selectedTileColor: primaryColor.withValues(alpha: 0.1),
                       selectedColor: primaryColor,
-                      selected:
-                          widget.textController.text == widget.elements[index],
+                      selected: widget.selectedItem == widget.elements[index],
                       title: Text(
                         widget.elements[index],
                         style: TaskFontStyle.titleBold,

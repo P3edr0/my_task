@@ -9,12 +9,13 @@ class NewTaskTimeSelector extends StatefulWidget {
   const NewTaskTimeSelector({
     super.key,
     required this.title,
-    required this.controller,
+    required this.selectedTime,
     required this.label,
+    required this.onSelected,
   });
   final String title;
-  final TextEditingController controller;
-
+  final String selectedTime;
+  final void Function(String value) onSelected;
   final String label;
 
   @override
@@ -52,10 +53,10 @@ class _NewTaskTimeSelectorState extends State<NewTaskTimeSelector> {
 
         TaskDropdown(
           label: widget.label,
-          textController: widget.controller,
+          selectedItem: widget.selectedTime,
           elements: times,
           width: Responsive.getSizeValue(150),
-          onTap: (value) {},
+          onTap: widget.onSelected,
         ),
       ],
     );

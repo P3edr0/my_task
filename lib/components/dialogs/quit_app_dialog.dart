@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_task/tarefa_project/new_task/components/button.dart';
+import 'package:my_task/presenter/new_task/components/button.dart';
 
 class QuitAppDialog {
   const QuitAppDialog();

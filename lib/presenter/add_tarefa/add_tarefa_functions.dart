@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:my_task/tarefa_project/add_tarefa/store/add_tarefa_store.dart';
+import 'package:my_task/presenter/add_tarefa/store/add_tarefa_store.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AddTarefaFunctions {

@@ -1,11 +1,16 @@
 import 'package:intl/intl.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:my_task/locale/locale_controller.dart';
 import 'package:my_task/utils/formatters/int_formatter.dart';
 import 'package:my_task/utils/formatters/string_formatter.dart';
 
 class DateFormatter {
   final _localeProvider = LocaleController.instance();
-
+  static final maskFormatter = MaskTextInputFormatter(
+    mask: '##/##/####',
+    filter: {"#": RegExp(r'[0-9a-z]')},
+    type: MaskAutoCompletionType.lazy,
+  );
   static String toHourMinutes(DateTime date) {
     final hour = date.hour;
 
@@ -19,6 +24,18 @@ class DateFormatter {
     final handledHour = IntFormatter.toShow(hour);
 
     return '$handledHour:$minute $complement';
+  }
+
+  static DateTime? dateValidator(String newDate) {
+    final splitDate = newDate.split('/');
+    if (splitDate.length < 3) {
+      return null;
+    }
+    final day = splitDate.first;
+    final month = splitDate[1];
+    final year = splitDate.last;
+    final newValidDate = DateTime.tryParse('$year-$month-$day');
+    return newValidDate;
   }
 
   String dayLetter(DateTime? date) {

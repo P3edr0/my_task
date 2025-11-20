@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:my_task/responsiveness/task_font_style.dart';
 import 'package:my_task/theme/colors.dart';
 
-class NewTaskTextField extends StatelessWidget {
-  const NewTaskTextField({
+class NewTaskFormTextField extends StatelessWidget {
+  const NewTaskFormTextField({
     super.key,
     required this.title,
     required this.controller,
@@ -15,6 +15,7 @@ class NewTaskTextField extends StatelessWidget {
     this.formatters,
     this.isSmall = false,
     this.action = TextInputAction.next,
+    required this.validator,
   });
   final String title;
   final TextEditingController controller;
@@ -25,6 +26,7 @@ class NewTaskTextField extends StatelessWidget {
   final TextInputAction action;
   final List<TextInputFormatter>? formatters;
   final bool isSmall;
+  final String? Function(String? value)? validator;
   @override
   Widget build(BuildContext context) {
     final hintColor = secondaryFocusColor.withValues(alpha: 0.4);
@@ -33,13 +35,15 @@ class NewTaskTextField extends StatelessWidget {
       children: [
         Text(title, style: TaskFontStyle.title.copyWith(color: primaryColor)),
 
-        TextField(
+        TextFormField(
           controller: controller,
+          validator: validator,
           cursorColor: primaryFocusColor,
           focusNode: focus,
           keyboardType: keyboardType,
           textInputAction: action,
           inputFormatters: formatters,
+
           style: isSmall ? TaskFontStyle.titleBold : TaskFontStyle.h4Bold,
           decoration: InputDecoration(
             hintText: hint,

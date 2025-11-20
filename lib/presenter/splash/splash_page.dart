@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_task/tarefa_project/home/home_page.dart';
+import 'package:my_task/presenter/home/home_page.dart';
 import 'package:my_task/utils/assets.dart';
 
 class Splash extends StatefulWidget {

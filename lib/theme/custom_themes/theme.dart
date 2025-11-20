@@ -30,7 +30,7 @@ class TaskAppTheme {
     ),
     brightness: Brightness.dark,
     scaffoldBackgroundColor: Colors.black,
-    colorScheme: ColorScheme.light(
+    colorScheme: ColorScheme.dark(
       primary: primaryColor,
       onPrimary: secondaryFocusColor,
       surface: secondaryColor,

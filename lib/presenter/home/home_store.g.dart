@@ -30,15 +30,30 @@ mixin _$HomeStore on HomeStoreBase, Store {
   late final _$daysAtom = Atom(name: 'HomeStoreBase.days', context: context);
 
   @override
-  List<DateTime> get days {
+  ObservableList<DateTime> get days {
     _$daysAtom.reportRead();
     return super.days;
   }
 
   @override
-  set days(List<DateTime> value) {
+  set days(ObservableList<DateTime> value) {
     _$daysAtom.reportWrite(value, super.days, () {
       super.days = value;
+    });
+  }
+
+  late final _$tasksAtom = Atom(name: 'HomeStoreBase.tasks', context: context);
+
+  @override
+  ObservableList<TaskEntity> get tasks {
+    _$tasksAtom.reportRead();
+    return super.tasks;
+  }
+
+  @override
+  set tasks(ObservableList<TaskEntity> value) {
+    _$tasksAtom.reportWrite(value, super.tasks, () {
+      super.tasks = value;
     });
   }
 
@@ -60,6 +75,18 @@ mixin _$HomeStore on HomeStoreBase, Store {
   }
 
   @override
+  void addTask(TaskEntity newTask) {
+    final _$actionInfo = _$HomeStoreBaseActionController.startAction(
+      name: 'HomeStoreBase.addTask',
+    );
+    try {
+      return super.addTask(newTask);
+    } finally {
+      _$HomeStoreBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void setSelectedDay(DateTime newSelectedDay) {
     final _$actionInfo = _$HomeStoreBaseActionController.startAction(
       name: 'HomeStoreBase.setSelectedDay',
@@ -75,7 +102,8 @@ mixin _$HomeStore on HomeStoreBase, Store {
   String toString() {
     return '''
 selectedDay: ${selectedDay},
-days: ${days}
+days: ${days},
+tasks: ${tasks}
     ''';
   }
 }

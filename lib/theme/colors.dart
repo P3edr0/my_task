@@ -5,4 +5,5 @@ const primaryFocusColor = Color.fromRGBO(153, 201, 241, 1);
 
 const transparent = Colors.transparent;
 const secondaryColor = Colors.white;
+const alertColor = Colors.red;
 const secondaryFocusColor = Color.fromRGBO(34, 34, 34, 1);

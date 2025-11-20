@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_task/domain/entities/task_entity.dart';
+import 'package:my_task/presenter/home/components/task_card.dart';
 import 'package:my_task/responsiveness/responsive.dart';
-import 'package:my_task/tarefa_project/home/components/task_card.dart';
 import 'package:my_task/theme/colors.dart';
 import 'package:my_task/utils/formatters/date_formatter.dart';
 
